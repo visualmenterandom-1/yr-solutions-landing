@@ -1,0 +1,399 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>YR Solutions - Soluciones Rápidas y Confiables</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "primary": "#250b40",
+                        "mauve-accent": "#A57D9D",
+                        "off-white": "#F8F9FA",
+                        "on-secondary": "#ffffff",
+                        "on-tertiary-container": "#4f3e00",
+                        "on-tertiary-fixed-variant": "#574500",
+                        "on-error": "#ffffff",
+                        "on-background": "#191c1d",
+                        "error-container": "#ffdad6",
+                        "error": "#ba1a1a",
+                        "surface": "#f8f9fa",
+                        "on-primary-fixed": "#270d42",
+                        "on-tertiary-fixed": "#241a00",
+                        "secondary-fixed": "#ffd7f5",
+                        "on-primary-fixed-variant": "#553b71",
+                        "text-primary": "#1A1A1A",
+                        "on-secondary-fixed-variant": "#5d3c58",
+                        "on-primary": "#ffffff",
+                        "fiscal-gold": "#D4AF37",
+                        "surface-bright": "#f8f9fa",
+                        "surface-tint": "#6d538a",
+                        "primary-fixed-dim": "#d9baf9",
+                        "outline-variant": "#ccc4cf",
+                        "inverse-surface": "#2e3132",
+                        "secondary-fixed-dim": "#e6b9dc",
+                        "inverse-primary": "#d9baf9",
+                        "on-error-container": "#93000a",
+                        "secondary-container": "#fdcff3",
+                        "surface-container": "#edeeef",
+                        "inverse-on-surface": "#f0f1f2",
+                        "surface-container-lowest": "#ffffff",
+                        "tertiary-container": "#cca730",
+                        "on-primary-container": "#a78ac5",
+                        "secondary": "#775371",
+                        "deep-purple-surface": "#3B2256",
+                        "tertiary": "#735c00",
+                        "primary-fixed": "#efdbff",
+                        "surface-container-high": "#e7e8e9",
+                        "surface-container-low": "#f3f4f5",
+                        "tertiary-fixed-dim": "#e9c349",
+                        "on-secondary-container": "#7a5573",
+                        "primary-container": "#3b2256",
+                        "on-surface-variant": "#4a454e",
+                        "on-tertiary": "#ffffff",
+                        "surface-variant": "#e1e3e4",
+                        "on-secondary-fixed": "#2d112b",
+                        "surface-container-highest": "#e1e3e4",
+                        "text-secondary": "#4A4A4A",
+                        "surface-dim": "#d9dadb",
+                        "on-surface": "#191c1d",
+                        "outline": "#7c757f",
+                        "tertiary-fixed": "#ffe088",
+                        "background": "#f8f9fa"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "margin-mobile": "16px",
+                        "gutter": "24px",
+                        "unit": "4px",
+                        "container-max": "1200px",
+                        "margin-desktop": "64px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Montserrat"],
+                        "label-md": ["Montserrat"],
+                        "headline-lg": ["Montserrat"],
+                        "body-lg": ["Montserrat"],
+                        "headline-md": ["Montserrat"],
+                        "headline-lg-mobile": ["Montserrat"],
+                        "display-lg": ["Montserrat"],
+                        "caption": ["Montserrat"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "600" }],
+                        "headline-lg": ["32px", { "lineHeight": "40px", "fontWeight": "700" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "headline-md": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "headline-lg-mobile": ["28px", { "lineHeight": "36px", "fontWeight": "700" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "caption": ["12px", { "lineHeight": "16px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .ambient-shadow { box-shadow: 0px 4px 20px rgba(59, 34, 86, 0.05); }
+        .ambient-shadow-lg { box-shadow: 0px 12px 32px rgba(59, 34, 86, 0.12); }
+        .glass-panel {
+            background: rgba(255, 255, 255, 0.85);
+            backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+    </style>
+</head>
+<body class="bg-background text-text-primary font-body-md antialiased overflow-x-hidden selection:bg-mauve-accent selection:text-white">
+<!-- Top Navigation -->
+<header class="bg-surface dark:bg-primary-container shadow-sm sticky top-0 z-50 transition-all duration-300 w-full">
+<nav class="flex justify-between items-center w-full px-margin-mobile md:px-margin-desktop max-w-container-max mx-auto h-20">
+<a class="flex items-center gap-2" href="#">
+<img alt="YR Solutions Logo" class="h-12 w-auto object-contain" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4DTFeS0vQQBRNz0zQGo4N5Fk-mgdSg_LsK6fQd8nm3NAb7vugKMjWsLFS698wtwK_xAb14TfezjennwCP7pXagmHWKQiu2-tKo5V3ECqxaHhUICn1Um_auOkAlpay8qL2R2xaOhLdTVV6zuOA-9Jax0Gr9ebf6xA3ULaBiWG3hJs6widAV8uIS8TlqhiBxfm1OJCa3t9swaYi0d1JiNM0zDygd3dBS4o5y0NI8aTV1SqfaY4BSESQU1M5f3G4ZR9mG7A4NlRZHg"/>
+</a>
+<div class="hidden md:flex items-center gap-8">
+<a class="font-label-md text-primary dark:text-fiscal-gold font-bold border-b-2 border-primary dark:border-fiscal-gold pb-1 hover:text-mauve-accent transition-colors duration-200" href="#inicio">Inicio</a>
+<a class="font-label-md text-text-secondary dark:text-on-primary-container hover:text-mauve-accent transition-colors duration-200" href="#servicios">Servicios</a>
+<a class="font-label-md text-text-secondary dark:text-on-primary-container hover:text-mauve-accent transition-colors duration-200" href="#nosotros">Sobre Nosotros</a>
+<a class="font-label-md text-text-secondary dark:text-on-primary-container hover:text-mauve-accent transition-colors duration-200" href="#contacto">Contacto</a>
+</div>
+<div class="hidden md:block">
+<button class="bg-primary hover:bg-primary-container text-on-primary font-label-md px-6 py-3 rounded-lg shadow-sm transition-all duration-300 scale-95 active:scale-90">
+                    Agenda tu cita
+                </button>
+</div>
+<button class="md:hidden text-primary p-2">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">menu</span>
+</button>
+</nav>
+</header>
+<!-- Hero Section -->
+<section class="relative pt-20 pb-32 overflow-hidden px-margin-mobile md:px-margin-desktop" id="inicio">
+<div class="absolute inset-0 z-0">
+<div class="absolute inset-0 bg-gradient-to-r from-background via-background/90 to-transparent z-10 md:w-2/3"></div>
+<img alt="Hero Background" class="w-full h-full object-cover object-right" src="https://lh3.googleusercontent.com/aida-public/AB6AXuADsCuiQizEusGBqjRccY_ikZWw_tUiklaqrUUU0lONeUBEQVIqnfbA1XVGfJzPv4K4rCl30kc7ue9ojKMug2B_hvb4eVxl6LUyup-a7AOilGbz2fiEm6d6PNpWLteDtF2v6I_u2FjQG19RSvzWGa0TVh2VlVKTaomswrQ3QYjHY5_HQcqf17kczetnKzyVkCpbTYoPd0vxXlpt-7DmOnVM8UOF83KR6MBAbQP_pKTI65fGBi570AeTJxrZM3Y_K8fYhkglO8h99w"/>
+</div>
+<div class="max-w-container-max mx-auto relative z-20 flex flex-col md:flex-row items-center">
+<div class="w-full md:w-3/5 md:pr-12">
+<span class="inline-block py-1 px-3 rounded-full bg-mauve-accent/10 text-secondary font-label-md mb-6 border border-mauve-accent/20">Tu Socio de Negocios</span>
+<h1 class="font-display-lg text-display-lg text-primary mb-6 leading-tight">
+                    Soluciones Rápidas y Confiables para tus Trámites y Negocios en Carolina del Norte.
+                </h1>
+<p class="font-body-lg text-body-lg text-text-secondary mb-10 max-w-2xl">
+                    Atención bilingüe y procesos simplificados para que tú te enfoques en crecer. Somos expertos en impuestos, trámites vehiculares y notarizaciones.
+                </p>
+<div class="flex flex-col sm:flex-row gap-4">
+<button class="bg-fiscal-gold hover:bg-tertiary-container text-primary font-label-md px-8 py-4 rounded-lg shadow-md transition-all duration-300 transform hover:-translate-y-1">
+                        Agenda tu cita hoy
+                    </button>
+<button class="bg-transparent border-2 border-mauve-accent text-mauve-accent hover:bg-mauve-accent hover:text-white font-label-md px-8 py-4 rounded-lg transition-all duration-300">
+                        Nuestros Servicios
+                    </button>
+</div>
+</div>
+<!-- Bento Box Accent -->
+<div class="hidden md:flex w-full md:w-2/5 justify-end mt-12 md:mt-0">
+<div class="glass-panel rounded-xl p-8 max-w-sm ambient-shadow-lg transform translate-y-12">
+<div class="flex items-center gap-4 mb-6">
+<div class="w-12 h-12 rounded-full bg-primary/10 flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">verified</span>
+</div>
+<div>
+<h3 class="font-headline-md text-body-md text-primary">Agente CAA del IRS</h3>
+<p class="font-caption text-caption text-text-secondary">Certificación oficial</p>
+</div>
+</div>
+<div class="flex items-center gap-4">
+<div class="w-12 h-12 rounded-full bg-fiscal-gold/20 flex items-center justify-center text-tertiary-container">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">translate</span>
+</div>
+<div>
+<h3 class="font-headline-md text-body-md text-primary">100% Bilingüe</h3>
+<p class="font-caption text-caption text-text-secondary">Inglés y Español</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Sobre Nosotros -->
+<section class="py-24 bg-surface px-margin-mobile md:px-margin-desktop" id="nosotros">
+<div class="max-w-container-max mx-auto flex flex-col md:flex-row gap-16 items-center">
+<div class="w-full md:w-1/2 relative">
+<div class="absolute inset-0 bg-mauve-accent/10 rounded-xl transform -rotate-3 scale-105 z-0"></div>
+<img class="rounded-xl object-cover h-[500px] w-full relative z-10 ambient-shadow-lg" data-alt="A professional Latina businesswoman in a modern office, smiling warmly and confidently towards the camera. She is wearing a dark corporate blazer. The office environment is bright, clean, and minimalist with subtle deep purple accents and natural light streaming through large windows, creating an atmosphere of trust, expertise, and approachability suitable for a high-end financial consulting firm." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCI-gNEGRtRlaR3g0mQRAU9-yK4sW3-h5hYqDJM-Hdh9Cu--ncMl17yjmtzlLovXXAz4ww7y253O0OrpI2zVan4qJrKL4808fNsHuucyYCP-_-WZ_tpS1gPtmIN9GcM9MP3WrymR3UjujqWjZLdLmoQxBGTRUQwnjj4HWIjz88XKAGZEbasXgcpUXp2AcadA5qsDr3uWExW4GraZd2T-siYq3TaUGyBSZ2oTdBxW_5dECLQ330idBmW2tOgEpa8OxHDdm3MKgDKCA"/>
+<div class="absolute -bottom-8 -right-8 bg-white p-6 rounded-xl ambient-shadow-lg z-20 hidden md:block">
+<p class="font-display-lg text-headline-lg text-primary">10+</p>
+<p class="font-label-md text-text-secondary uppercase tracking-wider">Años de Exp.</p>
+</div>
+</div>
+<div class="w-full md:w-1/2">
+<h2 class="font-headline-lg text-headline-lg md:text-display-lg text-primary mb-6">
+                    Conoce a Yalu Rivas y YR Solutions
+                </h2>
+<p class="font-body-lg text-body-lg text-text-secondary mb-8">
+                    Con más de una década de experiencia sirviendo a la comunidad de Carolina del Norte, entendemos los desafíos únicos que enfrentan nuestros clientes. Como Agente CAA del IRS y Notario Público certificado, brindamos un servicio integral y seguro.
+                </p>
+<div class="space-y-4 mb-10">
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-fiscal-gold mt-1" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<div>
+<h4 class="font-label-md text-body-md text-primary">Atención Bilingüe</h4>
+<p class="font-body-md text-caption text-text-secondary">Comunicación clara en tu idioma.</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-fiscal-gold mt-1" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<div>
+<h4 class="font-label-md text-body-md text-primary">Procesos Transparentes</h4>
+<p class="font-body-md text-caption text-text-secondary">Sin sorpresas ni cargos ocultos.</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-fiscal-gold mt-1" style="font-variation-settings: 'FILL' 1;">check_circle</span>
+<div>
+<h4 class="font-label-md text-body-md text-primary">Acompañamiento Paso a Paso</h4>
+<p class="font-body-md text-caption text-text-secondary">Te guiamos en cada etapa del trámite.</p>
+</div>
+</div>
+</div>
+</div>
+</div>
+</section>
+<!-- Servicios -->
+<section class="py-24 bg-white px-margin-mobile md:px-margin-desktop" id="servicios">
+<div class="max-w-container-max mx-auto">
+<div class="text-center mb-16">
+<h2 class="font-headline-lg text-headline-lg md:text-display-lg text-primary mb-4">Nuestros Servicios Principales</h2>
+<p class="font-body-md text-body-lg text-text-secondary max-w-2xl mx-auto">Soluciones integrales diseñadas para simplificar tu vida personal y profesional.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
+<!-- Service Card 1 -->
+<div class="bg-surface rounded-xl p-8 ambient-shadow border border-surface-variant hover:-translate-y-2 transition-transform duration-300 group">
+<div class="w-14 h-14 rounded-lg bg-primary/5 text-primary flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">receipt_long</span>
+</div>
+<h3 class="font-headline-md text-body-lg text-primary mb-3">Impuestos</h3>
+<p class="font-body-md text-caption text-text-secondary mb-4">Preparación de taxes, trámites de ITIN y registro BOI con precisión y rapidez.</p>
+<a class="inline-flex items-center text-mauve-accent font-label-md group-hover:underline" href="#">
+                        Saber más <span class="material-symbols-outlined ml-1 text-sm">arrow_forward</span>
+</a>
+</div>
+<!-- Service Card 2 -->
+<div class="bg-surface rounded-xl p-8 ambient-shadow border border-surface-variant hover:-translate-y-2 transition-transform duration-300 group">
+<div class="w-14 h-14 rounded-lg bg-primary/5 text-primary flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">directions_car</span>
+</div>
+<h3 class="font-headline-md text-body-lg text-primary mb-3">Trámites Vehiculares</h3>
+<p class="font-body-md text-caption text-text-secondary mb-4">Gestión de placas, títulos y seguros para tu vehículo sin complicaciones.</p>
+<a class="inline-flex items-center text-mauve-accent font-label-md group-hover:underline" href="#">
+                        Saber más <span class="material-symbols-outlined ml-1 text-sm">arrow_forward</span>
+</a>
+</div>
+<!-- Service Card 3 -->
+<div class="bg-surface rounded-xl p-8 ambient-shadow border border-surface-variant hover:-translate-y-2 transition-transform duration-300 group">
+<div class="w-14 h-14 rounded-lg bg-primary/5 text-primary flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">history_edu</span>
+</div>
+<h3 class="font-headline-md text-body-lg text-primary mb-3">Notarizaciones</h3>
+<p class="font-body-md text-caption text-text-secondary mb-4">Servicios de notario público y traducciones certificadas de documentos oficiales.</p>
+<a class="inline-flex items-center text-mauve-accent font-label-md group-hover:underline" href="#">
+                        Saber más <span class="material-symbols-outlined ml-1 text-sm">arrow_forward</span>
+</a>
+</div>
+<!-- Service Card 4 -->
+<div class="bg-surface rounded-xl p-8 ambient-shadow border border-surface-variant hover:-translate-y-2 transition-transform duration-300 group">
+<div class="w-14 h-14 rounded-lg bg-primary/5 text-primary flex items-center justify-center mb-6 group-hover:bg-primary group-hover:text-white transition-colors">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">devices</span>
+</div>
+<h3 class="font-headline-md text-body-lg text-primary mb-3">Soluciones Digitales</h3>
+<p class="font-body-md text-caption text-text-secondary mb-4">Asesoría tecnológica y herramientas digitales para potenciar tu negocio.</p>
+<a class="inline-flex items-center text-mauve-accent font-label-md group-hover:underline" href="#">
+                        Saber más <span class="material-symbols-outlined ml-1 text-sm">arrow_forward</span>
+</a>
+</div>
+</div>
+</div>
+</section>
+<!-- Beneficios -->
+<section class="py-20 bg-primary text-white px-margin-mobile md:px-margin-desktop">
+<div class="max-w-container-max mx-auto">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-12 text-center">
+<div class="flex flex-col items-center">
+<div class="w-20 h-20 rounded-full bg-white/10 flex items-center justify-center mb-6 border border-white/20">
+<span class="material-symbols-outlined text-4xl text-fiscal-gold" style="font-variation-settings: 'FILL' 1;">workspace_premium</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-2">Más de 10 años de experiencia</h3>
+<p class="font-body-md text-white/80">Conocimiento profundo de las regulaciones y procesos locales.</p>
+</div>
+<div class="flex flex-col items-center">
+<div class="w-20 h-20 rounded-full bg-white/10 flex items-center justify-center mb-6 border border-white/20">
+<span class="material-symbols-outlined text-4xl text-fiscal-gold" style="font-variation-settings: 'FILL' 1;">handshake</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-2">Atención personalizada</h3>
+<p class="font-body-md text-white/80">Cada caso es único y recibe la dedicación que merece.</p>
+</div>
+<div class="flex flex-col items-center">
+<div class="w-20 h-20 rounded-full bg-white/10 flex items-center justify-center mb-6 border border-white/20">
+<span class="material-symbols-outlined text-4xl text-fiscal-gold" style="font-variation-settings: 'FILL' 1;">support_agent</span>
+</div>
+<h3 class="font-headline-md text-headline-md mb-2">Soporte completo</h3>
+<p class="font-body-md text-white/80">Te acompañamos de principio a fin en todos tus trámites.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Footer / Contacto -->
+<footer class="bg-surface-container-lowest pt-24 pb-12 px-margin-mobile md:px-margin-desktop border-t border-surface-variant" id="contacto">
+<div class="max-w-container-max mx-auto">
+<div class="grid grid-cols-1 lg:grid-cols-2 gap-16 mb-16">
+<!-- Contact Form -->
+<div class="bg-white p-8 rounded-xl ambient-shadow border border-surface-variant">
+<h3 class="font-headline-lg text-headline-md text-primary mb-6">Contáctanos</h3>
+<form class="space-y-6">
+<div>
+<label class="block font-label-md text-text-secondary mb-2" for="name">Nombre Completo</label>
+<input class="w-full border border-outline-variant rounded-lg px-4 py-3 focus:ring-2 focus:ring-primary focus:border-primary transition-colors bg-surface-bright" id="name" placeholder="Tu nombre" type="text"/>
+</div>
+<div>
+<label class="block font-label-md text-text-secondary mb-2" for="phone">Teléfono</label>
+<input class="w-full border border-outline-variant rounded-lg px-4 py-3 focus:ring-2 focus:ring-primary focus:border-primary transition-colors bg-surface-bright" id="phone" placeholder="(919) 000-0000" type="tel"/>
+</div>
+<div>
+<label class="block font-label-md text-text-secondary mb-2" for="service">Servicio de Interés</label>
+<select class="w-full border border-outline-variant rounded-lg px-4 py-3 focus:ring-2 focus:ring-primary focus:border-primary transition-colors bg-surface-bright text-text-primary" id="service">
+<option>Impuestos / ITIN</option>
+<option>Trámites Vehiculares</option>
+<option>Notarizaciones</option>
+<option>Otro</option>
+</select>
+</div>
+<div>
+<label class="block font-label-md text-text-secondary mb-2" for="message">Mensaje (Opcional)</label>
+<textarea class="w-full border border-outline-variant rounded-lg px-4 py-3 focus:ring-2 focus:ring-primary focus:border-primary transition-colors bg-surface-bright" id="message" placeholder="¿Cómo podemos ayudarte?" rows="4"></textarea>
+</div>
+<button class="w-full bg-primary hover:bg-primary-container text-white font-label-md py-4 rounded-lg shadow-md transition-all duration-300" type="submit">
+                            Solicitar Información
+                        </button>
+</form>
+</div>
+<!-- Contact Info & Map -->
+<div class="flex flex-col justify-between">
+<div>
+<img alt="YR Solutions Logo" class="h-16 w-auto mb-8" src="https://lh3.googleusercontent.com/aida-public/AB6AXuD4DTFeS0vQQBRNz0zQGo4N5Fk-mgdSg_LsK6fQd8nm3NAb7vugKMjWsLFS698wtwK_xAb14TfezjennwCP7pXagmHWKQiu2-tKo5V3ECqxaHhUICn1Um_auOkAlpay8qL2R2xaOhLdTVV6zuOA-9Jax0Gr9ebf6xA3ULaBiWG3hJs6widAV8uIS8TlqhiBxfm1OJCa3t9swaYi0d1JiNM0zDygd3dBS4o5y0NI8aTV1SqfaY4BSESQU1M5f3G4ZR9mG7A4NlRZHg"/>
+<div class="space-y-6 mb-8">
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-mauve-accent mt-1" style="font-variation-settings: 'FILL' 1;">location_on</span>
+<div>
+<h4 class="font-label-md text-primary">Dirección</h4>
+<p class="font-body-md text-text-secondary">1759 Fairway RD<br/>Asheboro, NC 27205</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-mauve-accent mt-1" style="font-variation-settings: 'FILL' 1;">phone</span>
+<div>
+<h4 class="font-label-md text-primary">Teléfono</h4>
+<p class="font-body-md text-text-secondary">919-519-6704</p>
+</div>
+</div>
+<div class="flex items-start gap-4">
+<span class="material-symbols-outlined text-mauve-accent mt-1" style="font-variation-settings: 'FILL' 1;">schedule</span>
+<div>
+<h4 class="font-label-md text-primary">Horario</h4>
+<p class="font-body-md text-text-secondary">Lunes - Viernes: 9:00 AM - 6:00 PM<br/>Sábados: Con cita previa</p>
+</div>
+</div>
+</div>
+<!-- Map Placeholder -->
+<div class="w-full h-48 bg-surface-variant rounded-xl overflow-hidden relative mb-8">
+<img class="w-full h-full object-cover opacity-80" data-alt="A clean, modern, top-down map view showing the location of Asheboro, NC, with a subtle deep purple map marker pinpointing a central location. The map style is minimalist, utilizing light grey and soft white tones for roads and terrain, contrasting cleanly with the dark purple marker to maintain a professional corporate aesthetic." data-location="Asheboro, NC" src="https://lh3.googleusercontent.com/aida-public/AB6AXuAijcVbYFSRTyQ14LXgZyxwnnizpPFhFI42qBUWml4Xh3QdYzfai5IECeDWKoW0gcqyG17CS91Rl9SjIv8lOrkiOxR8EWduw1w5zhV5Imj60kGeQHXYr1uRoiKPhqi6vXwtxLMYqLBMlq9fiLkjKnHU26N_E6p8hOqZamOZPlHpPpEkTLgd38ALFfHH3jUHvkajvF8MqYbqqeEnH1xhfyQSKZdAbQQqKjT9LM7tqNO8N0QWQXlSKmL-69_TLRWI56KMrouJTCM1bQ"/>
+<div class="absolute inset-0 border border-black/10 rounded-xl pointer-events-none"></div>
+</div>
+</div>
+</div>
+</div>
+<!-- Footer Bottom (From JSON) -->
+<div class="border-t border-surface-variant pt-8 flex flex-col md:flex-row justify-between items-center gap-4">
+<p class="font-caption text-caption text-text-secondary">
+                    © 2024 YR Solutions. Todos los derechos reservados.
+                </p>
+<div class="flex gap-6">
+<a class="font-caption text-caption text-text-secondary hover:text-fiscal-gold transition-colors duration-200" href="#">Privacidad</a>
+<a class="font-caption text-caption text-text-secondary hover:text-fiscal-gold transition-colors duration-200" href="#">Términos</a>
+<a class="font-caption text-caption text-text-secondary hover:text-fiscal-gold transition-colors duration-200" href="#">Preguntas Frecuentes</a>
+</div>
+</div>
+</div>
+</footer>
+</body></html>
