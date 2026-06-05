@@ -4,7 +4,8 @@
   "description": "Landing page for YR Solutions",
   "main": "index.html",
   "scripts": {
-    "dev": "browser-sync start --server --files \"index.html, assets/**/*\""
+    "dev": "browser-sync start --server --files \"index.html, assets/**/*\"",
+    "watch-sync": "node watch-sync.js"
   },
   "devDependencies": {
     "browser-sync": "^3.0.3"
