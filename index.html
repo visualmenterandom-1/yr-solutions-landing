@@ -457,20 +457,45 @@
 <script>
 document.getElementById('contactForm').addEventListener('submit', function(e) {
     e.preventDefault();
-    const name = document.getElementById('name').value;
-    const phone = document.getElementById('phone').value;
-    const service = document.getElementById('service').value;
-    const message = document.getElementById('message').value;
+    const btn = e.target.querySelector('button[type="submit"]');
+    const originalText = btn.textContent;
+    btn.disabled = true;
+    btn.textContent = 'Enviando...';
 
-    const subject = `Solicitud de Información - ${name}`;
-    const body = `Hola Yalu,\n\nHas recibido una nueva solicitud de información desde el formulario de contacto de YR Solutions:\n\n` +
-                 `- Nombre Completo: ${name}\n` +
-                 `- Teléfono: ${phone}\n` +
-                 `- Servicio de Interés: ${service}\n` +
-                 `- Mensaje: ${message || 'Sin mensaje adicional'}\n\n` +
-                 `Saludos.`;
+    const formData = new FormData();
+    formData.append('form_type', 'contact');
+    formData.append('name', document.getElementById('name').value);
+    formData.append('phone', document.getElementById('phone').value);
+    formData.append('service', document.getElementById('service').value);
+    formData.append('message', document.getElementById('message').value);
 
-    window.location.href = `mailto:yalu@yrsolutions.pro?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+    fetch('send_email.php', {
+        method: 'POST',
+        body: formData
+    })
+    .then(response => response.json())
+    .then(data => {
+        if (data.status === 'success') {
+            btn.textContent = '¡Enviado con éxito!';
+            btn.style.backgroundColor = '#10B981';
+            e.target.reset();
+            setTimeout(() => {
+                btn.disabled = false;
+                btn.textContent = originalText;
+                btn.style.backgroundColor = '';
+            }, 3000);
+        } else {
+            alert('Error: ' + data.message);
+            btn.disabled = false;
+            btn.textContent = originalText;
+        }
+    })
+    .catch(error => {
+        console.error('Error:', error);
+        alert('Hubo un problema al enviar tu solicitud. Inténtalo de nuevo.');
+        btn.disabled = false;
+        btn.textContent = originalText;
+    });
 });
 
 // Mobile Menu Toggle

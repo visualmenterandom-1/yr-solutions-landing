@@ -567,20 +567,49 @@ document.addEventListener('DOMContentLoaded', () => {
     if (bookingForm) {
         bookingForm.addEventListener('submit', (e) => {
             e.preventDefault();
+            const btn = e.target.querySelector('button[type="submit"]');
+            const originalHtml = btn.innerHTML;
+            btn.disabled = true;
+            btn.textContent = 'Enviando...';
+
             const businessName = document.getElementById('businessName').value;
             const contactInfo = document.getElementById('contactInfo').value;
             const monthYear = document.getElementById('calendarMonth').textContent;
 
-            const subject = `Nueva Cita de Diseño Web - ${businessName}`;
-            const body = `Hola Yalu,\n\nHas recibido una solicitud para agendar una cita de Diseño Web:\n\n` +
-                         `- Nombre del Negocio: ${businessName}\n` +
-                         `- Datos de Contacto: ${contactInfo}\n` +
-                         `- Fecha de la Cita: ${selectedDay} de ${monthYear}\n` +
-                         `- Hora de la Cita: ${selectedTime}\n\n` +
-                         `Favor de ponerse en contacto con el cliente para confirmar la cita.\n\n` +
-                         `Saludos.`;
+            const formData = new FormData();
+            formData.append('form_type', 'booking');
+            formData.append('businessName', businessName);
+            formData.append('contactInfo', contactInfo);
+            formData.append('date', `${selectedDay} de ${monthYear}`);
+            formData.append('time', selectedTime);
 
-            window.location.href = `mailto:yalu@yrsolutions.pro?subject=${encodeURIComponent(subject)}&body=${encodeURIComponent(body)}`;
+            fetch('send_email.php', {
+                method: 'POST',
+                body: formData
+            })
+            .then(response => response.json())
+            .then(data => {
+                if (data.status === 'success') {
+                    btn.textContent = '¡Cita solicitada con éxito!';
+                    btn.style.backgroundColor = '#10B981';
+                    e.target.reset();
+                    setTimeout(() => {
+                        btn.disabled = false;
+                        btn.innerHTML = originalHtml;
+                        btn.style.backgroundColor = '';
+                    }, 3000);
+                } else {
+                    alert('Error: ' + data.message);
+                    btn.disabled = false;
+                    btn.innerHTML = originalHtml;
+                }
+            })
+            .catch(error => {
+                console.error('Error:', error);
+                alert('Hubo un problema al enviar tu solicitud. Inténtalo de nuevo.');
+                btn.disabled = false;
+                btn.innerHTML = originalHtml;
+            });
         });
     }
 });
