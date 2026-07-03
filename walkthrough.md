@@ -35,8 +35,18 @@ He completado la integración de los nuevos subsitios y la programación del men
 - **Nueva Imagen de Marca:** Se reemplazó la imagen del fondo de la sección Hero por la fotografía corporativa que muestra un laptop en un escritorio de oficina con el logo impreso de **YR Solutions (Taxes, Notary and More)** en la tapa y un fondo de estantería en tonos morados.
 - **Optimización de Carga y Rendimiento:** Convertí y optimicé el archivo PNG original de 919 KB a formato JPEG (`assets/office_environment.jpg`) con un peso de tan solo **32 KB** (reducción del 96.5% en el peso del archivo). Esto garantiza una velocidad de carga de la web extremadamente rápida y un mejor posicionamiento SEO.
 
+### 7. Procesamiento de Correo en Segundo Plano (`send_email.php`) [NEW]
+- **Script PHP de Servidor:** Se implementó un script backend seguro en PHP (`send_email.php`) que maneja las solicitudes de los formularios de contacto y agendamientos.
+- **Envío AJAX sin Recargas:** Se reescribieron los manejadores de eventos JavaScript en `index.html` y `diseno-web.html` para usar la API Fetch. La información se envía en segundo plano sin abrir ventanas de correo locales (como Outlook).
+- **Indicador de Carga y Éxito:** Los botones de envío cambian a "Enviando..." y, tras completarse con éxito, se pintan de color verde mostrando "¡Enviado con éxito!" o "¡Cita solicitada con éxito!" respectivamente, limpiando los campos automáticamente.
+
+### 8. Favicon y Previsualización para Redes Sociales (WhatsApp/Facebook)
+- **Favicon de Marca:** Se añadió la etiqueta `<link rel="icon">` en la cabecera de las tres páginas web, referenciando el logotipo oficial `assets/your_real_solutions512x512.png`. Esto muestra el logo de YR Solutions en la pestaña de dirección del navegador.
+- **Metadatos Open Graph (SEO):** Se incluyeron las etiquetas meta Open Graph (`og:title`, `og:description`, `og:image`, `og:url`, `og:site_name`, `og:type`) en todas las páginas. La etiqueta de imagen utiliza la ruta absoluta `https://yrsoluciones.info/assets/your_real_solutions512x512.png`, garantizando que al compartir el link por WhatsApp y otras redes sociales aparezca una previsualización con el logotipo y la descripción del servicio en español.
+
 ## Verificación
 
 - **Sincronización en Vivo:** El servidor local de BrowserSync detectó y recargó todos los archivos automáticamente.
 - **Navegación e Interactividad Móvil:** En vistas móviles, el botón hamburguesa despliega el drawer del menú correctamente en las tres páginas, permitiendo acceder a "Diseño Web", "Conoce a Yalu Rivas", volver a la página de inicio o cerrar el menú de forma fluida.
 - **Enlaces en Desktop:** Los botones del header e inline llevan a sus respectivos subsitios y secciones de inicio de manera directa.
+- **Subida Exitosa a GitHub:** Se configuró el repositorio correcto bajo el usuario `visualmenterandom-1` y se subieron los archivos con éxito. El despliegue de Hostinger está en línea y completamente funcional en `https://yrsoluciones.info`.
